@@ -1,0 +1,229 @@
+openapi: 3.0.1
+info:
+  title: Aircraft
+  version: 1.0.0
+servers:
+- description: Generated server url
+  url: http://localhost:8080
+tags:
+- description: CRUD AIRCRAFT
+  name: AircraftController
+paths:
+  /api/aircrafts:
+    get:
+      operationId: getAircrafts
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Aircraft'
+                type: array
+          description: Another transaction deleted Aircraft.
+        "201":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Aircraft'
+                type: array
+          description: The Aircraft has been correctly deleted.
+        "400":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Aircraft'
+                type: array
+          description: The transaction schema is invalid.
+        "415":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Aircraft'
+                type: array
+          description: The content type is unsupported
+        "500":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Aircraft'
+                type: array
+          description: An unexpected error has occurred.
+      tags:
+      - AircraftController
+      x-accepts: application/json
+      x-tags:
+      - tag: AircraftController
+    post:
+      description: Long description
+      operationId: createGroup
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Aircraft'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Aircraft'
+          description: Another transaction deleted Aircraft.
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Aircraft'
+          description: The Aircraft has been correctly deleted.
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Aircraft'
+          description: The transaction schema is invalid.
+        "415":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Aircraft'
+          description: The content type is unsupported
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Aircraft'
+          description: An unexpected error has occurred.
+      summary: Short description
+      tags:
+      - AircraftController
+      x-content-type: application/json
+      x-accepts: application/json
+      x-tags:
+      - tag: AircraftController
+    put:
+      operationId: updateGroup
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Aircraft'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Aircraft'
+          description: Another transaction deleted Aircraft.
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Aircraft'
+          description: The Aircraft has been correctly deleted.
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Aircraft'
+          description: The transaction schema is invalid.
+        "415":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Aircraft'
+          description: The content type is unsupported
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Aircraft'
+          description: An unexpected error has occurred.
+      tags:
+      - AircraftController
+      x-content-type: application/json
+      x-accepts: application/json
+      x-tags:
+      - tag: AircraftController
+  /api/aircrafts/{id}:
+    get:
+      operationId: getAircraft
+      parameters:
+      - description: Aircraft ID
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int64
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Aircraft'
+          description: Another transaction deleted Aircraft.
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Aircraft'
+          description: The Aircraft has been correctly deleted.
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Aircraft'
+          description: The transaction schema is invalid.
+        "415":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Aircraft'
+          description: The content type is unsupported
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Aircraft'
+          description: An unexpected error has occurred.
+      security:
+      - basicAuth: []
+      summary: My endpoint
+      tags:
+      - AircraftController
+      x-accepts: application/json
+      x-tags:
+      - tag: AircraftController
+components:
+  schemas:
+    Aircraft:
+      description: Aircraft entity
+      example:
+        range: 1000
+        model: model
+        id: 0
+      properties:
+        id:
+          description: GenerationType.IDENTITY
+          format: int64
+          readOnly: true
+          type: integer
+        model:
+          type: string
+        range:
+          format: int32
+          minimum: 1000
+          type: integer
+      type: object
+  securitySchemes:
+    basicAuth:
+      scheme: basic
+      type: http
